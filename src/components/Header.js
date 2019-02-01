@@ -7,8 +7,8 @@ class Header extends Component{
       <div>
         <Navbar bg="light">
           <Nav style={{margin: "auto"}}>
-            <Nav.Link href="/newcat">Add New Cat</Nav.Link>
-            <Nav.Link href="/cats">Cat List</Nav.Link>
+            <Nav.Link href="/newcat" style={{backgroundColor: "darksalmon"}}>Add New Cat</Nav.Link>
+            <Nav.Link href="/cats" style={{backgroundColor: "aliceblue"}}>Cat List</Nav.Link>
           </Nav>
         </Navbar>
 

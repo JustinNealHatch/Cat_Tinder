@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import { Form, Button } from 'react-bootstrap'
+import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
+
+import Cats from './Cats'
 
 class NewCat extends Component{
   constructor(props){
@@ -8,15 +11,14 @@ class NewCat extends Component{
       form: {
         name:'',
         age:'',
-        enjoys:''
+        enjoys:'',
+        url:''
       }
     }
   }
   handleChange(event){
     let {form} = this.state
     form[event.target.name] = event.target.value
-    form[event.target.age] = event.target.value
-    form[event.target.enjoys] = event.target.value
     this.setState({form: form})
     console.log("form",form)
     console.log("this.props.cats",this.props.cats)
@@ -72,6 +74,8 @@ class NewCat extends Component{
           <Button type="submit" id="submit" onClick={this.addNewCat}>Create Cat Profile</Button>
 
         </Form>
+        {this.props.success && <Redirect to="/cats"/> }
+
       </div>
     )
   }
