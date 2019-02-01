@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {
- Container, Col, Row, ListGroup, ListGroupItem
+ Container, Col, Row, ListGroup, Card
 } from 'react-bootstrap'
 
 class Cats extends Component {
@@ -14,15 +14,14 @@ class Cats extends Component {
                     {this.props.cats.map((cat, index) =>{
                       return (
                         <div key={index}>
-                          <h4>
-                            <span className='cat-name'>
-                            {cat.name}
-                            </span>
-                            - <small className='cat-age'>{cat.age} years old</small>
-                          </h4>
-                          <span className='cat-enjoys'>
-                            {cat.enjoys}
-                          </span>
+                        <Card  style={{ width: '14rem' }}>
+                        <Card.Img variant="top" src={cat.url}></Card.Img>
+                          <Card.Body>
+                            <Card.Title>{cat.name}</Card.Title>
+                            <Card.Subtitle>{cat.age}</Card.Subtitle>
+                            <Card.Text>{cat.enjoys}</Card.Text>
+                          </Card.Body>
+                        </Card>
                         </div>
                       )
                     })}
